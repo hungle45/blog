@@ -11,4 +11,4 @@ hugo server -D # live reload in draft mode
 
 [TBU]
 
-retry build 1
+retry build 2
