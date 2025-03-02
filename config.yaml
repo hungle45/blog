@@ -16,7 +16,7 @@ params:
   ShowPostNavLinks: true
   ShowWordCount: false
   ShowCodeCopyButtons: true
-  ShowShareButtons: true
+  ShowShareButtons: false
   ShowAllPagesInArchive: true
   ShowPageNums: true
   ShowToc: true
