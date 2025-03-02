@@ -4,49 +4,76 @@ title: hungln
 theme: PaperMod
 
 params:
+  env: production
+  description: "Hung Le's Blog"
   author: "Hung Le"
+
   disableScrollToTop: false
-  defaultTheme: dark
+  defaultTheme: auto
 
   ShowReadingTime: true
   ShowBreadCrumbs: true
   ShowPostNavLinks: true
   ShowWordCount: false
+  ShowCodeCopyButtons: true
+  ShowShareButtons: true
+  ShowAllPagesInArchive: true
+  ShowPageNums: true
+  ShowToc: true
 
   # home-info mode
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog bla bla bla
+    Content: >
+      Welcome to my blog bla bla bla
 
   # social icons
   socialIcons:
-    - name: x
-      url: "https://x.com/"
-    - name: stackoverflow
-      url: "https://stackoverflow.com"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/le-nguyen-hung/"
     - name: github
-      url: "https://github.com/"
+      url: "https://github.com/hungle45"
+    - name: leetcode
+      url: "https://leetcode.com/u/hun9l3/"
+
+  assets:
+    disableHLJS: true
+  #     favicon: "<link / abs url>"
+  #     favicon16x16: "<link / abs url>"
+  #     favicon32x32: "<link / abs url>"
 
   cover:
     hidden: false # hide everywhere but not in structured data
     hiddenInList: true # hide on list pages and home
     hiddenInSingle: false # hide on single page
 
+  # for search
+  # https://fusejs.io/api/options.html
+  # fuseOpts:
+  #   isCaseSensitive: false
+  #   shouldSort: true
+  #   location: 0
+  #   distance: 1000
+  #   threshold: 0.4
+  #   minMatchCharLength: 0
+  #   limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
+  #   keys: ["title", "permalink", "summary", "content"]
+
 menu:
   main:
-    - identifier: "posts"
-      name: "Posts"
-      url: "/posts/"
-      weight: 1
-    - identifier: "til"
-      name: "TIL"
-      url: "/til/"
-      weight: 2
-    - identifier: "archives"
-      name: "Archives"
-      url: "/archives/"
-      weight: 3
     - identifier: "about"
       name: "About"
       url: "/about/"
+      weight: 1
+    - identifier: "posts"
+      name: "Posts"
+      url: "/posts/"
+      weight: 2
+    - identifier: "til"
+      name: "TIL"
+      url: "/til/"
+      weight: 3
+    - identifier: "archives"
+      name: "Archives"
+      url: "/archives/"
       weight: 4
