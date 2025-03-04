@@ -13,7 +13,7 @@ params:
 
   ShowReadingTime: true
   ShowBreadCrumbs: true
-  ShowPostNavLinks: true
+  ShowPostNavLinks: false
   ShowWordCount: false
   ShowCodeCopyButtons: true
   ShowShareButtons: false

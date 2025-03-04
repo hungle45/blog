@@ -7,26 +7,26 @@
     --footer-height: 60px;
     --radius: 8px;
     --theme: rgb(255, 255, 255);
-    --entry: rgb(255, 255, 255);
+    --entry: rgb(245, 245, 245);
     --primary: rgb(0, 0, 0);
-    --secondary: rgb(80, 80, 80);
+    --secondary: rgb(85, 85, 85);
     --tertiary: rgb(150, 150, 150);
-    --content: rgb(0, 0, 0);
-    --code-block-bg: rgb(28, 29, 33);
-    --code-bg: rgb(245, 245, 245);
-    --border: rgb(238, 238, 238);
+    --content: rgb(33, 37, 41);
+    --code-block-bg: rgb(245, 245, 245);
+    --code-bg: rgb(235, 235, 235);
+    --border: rgb(220, 220, 220);
 }
 
 .dark {
-    --theme: rgb(20, 20, 20);
-    --entry: rgb(30, 30, 30);
-    --primary: rgb(255, 255, 255);
+    --theme: rgb(5, 5, 5);
+    --entry: rgb(15, 15, 15);
+    --primary: rgb(240, 240, 240);
     --secondary: rgb(180, 180, 180);
-    --tertiary: rgb(100, 100, 100);
-    --content: rgb(240, 240, 240);
-    --code-block-bg: rgb(25, 25, 25);
-    --code-bg: rgb(50, 50, 50);
-    --border: rgb(70, 70, 70);
+    --tertiary: rgb(140, 140, 140);
+    --content: rgb(210, 210, 210);
+    --code-block-bg: rgb(10, 10, 10);
+    --code-bg: rgb(30, 30, 30);
+    --border: rgb(50, 50, 50);
 }
 
 .list {
