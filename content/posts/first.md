@@ -12,5 +12,9 @@ cover:
 
 # This is a heading one
 ## This is a heading two
+### This is a heading three
+#### This is a heading four
+##### This is a heading five
+###### This is a heading six
 
-This is a paragraph
+This is a **paragraph**
