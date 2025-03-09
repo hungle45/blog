@@ -20,6 +20,7 @@
 
 .logo {
     flex-wrap: inherit;
+    margin-right: 0;
 }
 
 .logo a {
