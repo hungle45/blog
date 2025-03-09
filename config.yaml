@@ -17,9 +17,11 @@ params:
   ShowWordCount: false
   ShowCodeCopyButtons: true
   ShowShareButtons: false
-  ShowAllPagesInArchive: true
+  ShowAllPagesInArchive: false
   ShowPageNums: true
   ShowToc: true
+
+  mainSections: ["posts"]
 
   # home-info mode
   homeInfoParams:
