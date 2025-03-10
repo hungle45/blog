@@ -1,5 +1,7 @@
 .chroma {
     background-color: unset !important;
+    font-size: 110%;
+    font-weight: 500;
 }
 
 .chroma .hl {
