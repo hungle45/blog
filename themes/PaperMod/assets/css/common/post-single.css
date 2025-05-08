@@ -130,7 +130,12 @@
 }
 
 .post-content table {
+    display: block;
     margin-bottom: var(--content-gap);
+}
+
+.post-content table:not(.highlighttable, .highlight table, .gist .highlight) {
+    display: table;
 }
 
 .post-content table th,

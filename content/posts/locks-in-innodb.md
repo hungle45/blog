@@ -1,12 +1,50 @@
 ---
 date: '2025-05-01T22:30:10+07:00'
-draft: false
+draft: true
 title: 'Locks in InnoDB'
 tags: [SQL, MySQL, InnoDB]
 math: true
 ---
 
 InnoDB uses locking in MySQL to handle concurrent data access and ensure consistency.  This is crucial in a database to prevent multiple users or processes from interfering with each other's changes. This post gives an overview of InnoDB lock types, explaining how they work to manage these concurrent operations and maintain data integrity.
+
+CREATE TABLE `books` (
+  `id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `author_id` bigint(20) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `borrowed` tinyint(1) DEFAULT '0',
+  PRIMARY KEY (`id`),
+  KEY `idx_books_on_author_id` (`author_id`)
+);
+
+INSERT INTO `books` (`author_id`, `title`)
+VALUES
+  (101, "The Pragmatic Programmer"),
+  (102, "Clean Code"),
+  (102, "The Clean Coder"),
+  (104, "Ruby Under a Microscope");
+
+SELECT THREAD_ID, INDEX_NAME, LOCK_TYPE, LOCK_MODE, LOCK_DATA, LOCK_STATUS
+        FROM performance_schema.data_locks
+        ORDER BY THREAD_ID, LOCK_TYPE DESC
+
+// console 1
+BEGIN;
+UPDATE books SET  borrowed=0 WHERE id = '2' LIMIT 1;
+ROLLBACK;
+COMMIT;
+
+BEGIN;
+INSERT INTO books (id, title, author_id, borrowed) VALUES ('5', 'The Great Gatsby', '101', 1);
+ROLLBACK;
+COMMIT;
+
+// console 2
+BEGIN;
+SELECT * FROM `books` WHERE `author_id` = '104' LOCK IN SHARE MODE;
+INSERT INTO books (id, title, author_id, borrowed) VALUES ('6', 'The Great', '101', 1);
+ROLLBACK;
+COMMIT;
 
 ### Shared and Exclusive Locks
 
