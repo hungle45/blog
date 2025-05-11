@@ -1,4 +1,4 @@
-{{- $headers := findRE "<h[1-6].*?>(.|\n])+?</h[1-6]>" .Content -}}
+{{- $headers := findRE "<h[1-3].*?>(.|\n])+?</h[1-3]>" .Content -}}
 {{- $has_headers := ge (len $headers) 1 -}}
 {{- if $has_headers -}}
 <div class="toc">
@@ -11,16 +11,16 @@
             {{- if (.Param "UseHugoToc") }}
             {{- .TableOfContents -}}
             {{- else }}
-            {{- $largest := 6 -}}
+            {{- $largest := 3 -}}
             {{- range $headers -}}
-            {{- $headerLevel := index (findRE "[1-6]" . 1) 0 -}}
+            {{- $headerLevel := index (findRE "[1-3]" . 1) 0 -}}
             {{- $headerLevel := len (seq $headerLevel) -}}
             {{- if lt $headerLevel $largest -}}
             {{- $largest = $headerLevel -}}
             {{- end -}}
             {{- end -}}
 
-            {{- $firstHeaderLevel := len (seq (index (findRE "[1-6]" (index $headers 0) 1) 0)) -}}
+            {{- $firstHeaderLevel := len (seq (index (findRE "[1-3]" (index $headers 0) 1) 0)) -}}
 
             {{- $.Scratch.Set "bareul" slice -}}
             <ul>
@@ -29,7 +29,7 @@
                     {{- $.Scratch.Add "bareul" (sub (add $largest .) 1) -}}
                     {{- end -}}
                     {{- range $i, $header := $headers -}}
-                    {{- $headerLevel := index (findRE "[1-6]" . 1) 0 -}}
+                    {{- $headerLevel := index (findRE "[1-3]" . 1) 0 -}}
                     {{- $headerLevel := len (seq $headerLevel) -}}
 
                     {{/* get id="xyz" */}}
@@ -37,10 +37,10 @@
 
                     {{- /* strip id="" to leave xyz, no way to get regex capturing groups in hugo */ -}}
                     {{- $cleanedID := replace (replace $id "id=\"" "") "\"" "" }}
-                    {{- $header := replaceRE "<h[1-6].*?>((.|\n])+?)</h[1-6]>" "$1" $header -}}
+                    {{- $header := replaceRE "<h[1-3].*?>((.|\n])+?)</h[1-3]>" "$1" $header -}}
 
                     {{- if ne $i 0 -}}
-                    {{- $prevHeaderLevel := index (findRE "[1-6]" (index $headers (sub $i 1)) 1) 0 -}}
+                    {{- $prevHeaderLevel := index (findRE "[1-3]" (index $headers (sub $i 1)) 1) 0 -}}
                     {{- $prevHeaderLevel := len (seq $prevHeaderLevel) -}}
                     {{- if gt $headerLevel $prevHeaderLevel -}}
                     {{- range seq $prevHeaderLevel (sub $headerLevel 1) -}}
@@ -79,7 +79,7 @@
                     {{- end -}}
                     <!-- {{- $firstHeaderLevel := len (seq (index (findRE "[1-6]" (index $headers 0) 1) 0)) -}} -->
                     {{- $firstHeaderLevel := $largest }}
-                    {{- $lastHeaderLevel := len (seq (index (findRE "[1-6]" (index $headers (sub (len $headers) 1)) 1) 0)) }}
+                    {{- $lastHeaderLevel := len (seq (index (findRE "[1-3]" (index $headers (sub (len $headers) 1)) 1) 0)) }}
                 </li>
                 {{- range seq (sub $lastHeaderLevel $firstHeaderLevel) -}}
                 {{- if in ($.Scratch.Get "bareul") (add . $firstHeaderLevel) }}

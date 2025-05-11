@@ -5,13 +5,34 @@
     {{- if .Get "link" -}}
         <a href="{{ .Get "link" }}"{{ with .Get "target" }} target="{{ . }}"{{ end }}{{ with .Get "rel" }} rel="{{ . }}"{{ end }}>
     {{- end }}
-    <img loading="lazy" src="{{ .Get "src" }}{{- if eq (.Get "align") "center" }}#center{{- end }}"
-         {{- if or (.Get "alt") (.Get "caption") }}
-         alt="{{ with .Get "alt" }}{{ . }}{{ else }}{{ .Get "caption" | markdownify| plainify }}{{ end }}"
-         {{- end -}}
-         {{- with .Get "width" }} width="{{ . }}"{{ end -}}
-         {{- with .Get "height" }} height="{{ . }}"{{ end -}}
-    /> <!-- Closing img tag -->
+    
+    {{- $align := .Get "align"}}
+    {{- $alt := .Get "alt" | default (or (.Get "title") (.Get "caption")) }}
+    {{- $caption := .Get "caption" | markdownify | plainify }}
+    {{- $width := .Get "width" | default "100%" }}
+    {{- $height := .Get "height" | default "auto" }}
+    
+    {{- $src :=  (.Get "src") }}
+    {{- $cover := resources.GetMatch $src}}
+
+    {{- if $cover -}}
+        <img loading="lazy" src="{{ $cover.Permalink }}{{- if eq $align "center" }}#center{{- end }}"
+            {{- if or $alt $caption }}
+            alt="{{ with $alt }}{{ . }}{{ else }}{{ $caption }}{{ end }}"
+            {{- end -}}
+            {{- with $width }} width="{{ . }}"{{ end -}}
+            {{- with $height }} height="{{ . }}"{{ end -}}
+        /> <!-- Closing img tag -->
+    {{- else }}
+        <image loading="lazy" src="{{ $src | absURL }}{{- if eq $align "center" }}#center{{- end }}"
+            {{- if or $alt $caption }}
+            alt="{{ with $alt }}{{ . }}{{ else }}{{ $caption }}{{ end }}"
+            {{- end -}}
+            {{- with $width }} width="{{ . }}"{{ end -}}
+            {{- with $height }} height="{{ . }}"{{ end -}}
+        /> <!-- Closing img tag -->
+    {{- end }}
+
     {{- if .Get "link" }}</a>{{ end -}}
     {{- if or (or (.Get "title") (.Get "caption")) (.Get "attr") -}}
         <figcaption>

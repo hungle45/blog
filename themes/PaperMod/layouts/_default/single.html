@@ -25,6 +25,7 @@
       {{- partial "translation_list.html" . -}}
       {{- partial "edit_post.html" . -}}
       {{- partial "post_canonical.html" . -}}
+      {{- partial "mermaid.html" . -}}
     </div>
     {{- end }}
   </header>
@@ -39,6 +40,19 @@
     {{- if not (.Param "disableAnchoredHeadings") }}
     {{- partial "anchored_headings.html" .Content -}}
     {{- else }}{{ .Content }}{{ end }}
+  </div>
+  {{- end }}
+
+  {{- if .Params.references }}
+  <div class="post-references">
+    <h2>References</h2>
+    <ul>
+      {{- range .Params.references }}
+      <li>
+        <a href="{{ .url }}" target="_blank" rel="noopener noreferrer">{{ .title }}</a>
+      </li>
+      {{- end }}
+    </ul>
   </div>
   {{- end }}
 

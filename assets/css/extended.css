@@ -1,0 +1,47 @@
+.post-references {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    background: var(--code-bg);
+    border-radius: var(--radius);
+}
+
+.post-references h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+    color: var(--primary);
+}
+
+.post-references ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.post-references li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.post-references li:last-child {
+    margin-bottom: 0;
+}
+
+.post-references li::before {
+    content: "📚";
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.post-references a {
+    color: var(--primary);
+    text-decoration: none;
+    border-bottom: 1px dashed var(--border);
+    transition: all 0.3s ease;
+}
+
+.post-references a:hover {
+    border-bottom-color: var(--primary);
+}
