@@ -141,7 +141,7 @@ appendonly no
 save ""
 ```
 
-### Redis Database (RDB)
+#### Redis Database (RDB)
 
 The RDB persistence performs point-in-time snapshots of your dataset at specified intervals and saves them to disk in `.rdb` file. If you care a lot about your data but still can live with a few minutes of data loss in case of disasters, you can use RDB alone.
 
@@ -162,7 +162,7 @@ How it works:
 - The child starts to write the dataset to a temporary RDB file.
 - When the child is done writing the new RDB file, it replaces the old one.
 
-### Append Only File (AOF)
+#### Append Only File (AOF)
 
 Append Only File is a logging mechanism that writes a log file on a disk for every operation performed on the Redis database. The log file is used to reconstruct the database in case of a crash or failure by re-executing all operations preserved in the file.
 
@@ -171,7 +171,7 @@ Append Only File is a logging mechanism that writes a log file on a disk for eve
 appendfilename "appendonly.aof"
 ```
 
-#### Log Rewriting
+##### Log Rewriting
 
 The AOF grows as write operations are performed. For example, incrementing a counter 100 times results in 100 entries in the AOF, though only the final entry is needed to rebuild the current state.
 
@@ -205,7 +205,7 @@ root@f1877d80cde0:/data/appendonlydir# ls
 appendonly.aof.1.base.rdb  appendonly.aof.1.incr.aof  appendonly.aof.manifest
 ```
 
-#### Durable levels
+##### Durable levels
 
 The frequency at which Redis syncs data to disk can be specified. There are three options:
 
