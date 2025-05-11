@@ -35,6 +35,10 @@
   {{- partial "toc.html" . }}
   {{- end }}
 
+  {{- if (.Param "ShowToc") }}
+  {{- partial "side-toc.html" . }}
+  {{- end }}
+  
   {{- if .Content }}
   <div class="post-content">
     {{- if not (.Param "disableAnchoredHeadings") }}

@@ -1,0 +1,102 @@
+{{- if and (.Param "ShowToc") (ne .TableOfContents "<nav id=\"TableOfContents\"></nav>") }}
+<div class="side-toc-trigger" aria-hidden="true"></div>
+<div class="side-toc-indicator" id="sideTocIndicator"></div>
+<aside class="side-toc">
+    <div class="inner">
+        <nav id="SideTableOfContents" aria-label="Table of contents navigation">
+            {{- .TableOfContents }}
+        </nav>
+    </div>
+</aside>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    const headings = document.querySelectorAll('h1[id], h2[id], h3[id]');
+    const indicatorContainer = document.getElementById('sideTocIndicator');
+    
+    // Map to store heading data
+    const headingData = [];
+    
+    headings.forEach(heading => {
+        const level = parseInt(heading.tagName.charAt(1));
+        const indicator = document.createElement('div');
+        indicator.className = `indicator-item h${level}-indicator`;
+        indicator.dataset.target = '#' + heading.id;
+        indicatorContainer.appendChild(indicator);
+        
+        headingData.push({
+            element: heading,
+            indicator: indicator,
+            level: level,
+            top: heading.offsetTop
+        });
+    });
+
+    // Update active indicator with improved accuracy
+    const updateActiveIndicator = () => {
+        const scrollPosition = window.scrollY;
+        const windowHeight = window.innerHeight;
+        const triggerOffset = 150; // Pixels from top to trigger change
+        
+        // Find the current heading
+        let currentHeading = null;
+        
+        // Iterate backwards to find the last heading above our trigger point
+        for (let i = headingData.length - 1; i >= 0; i--) {
+            const heading = headingData[i];
+            const rect = heading.element.getBoundingClientRect();
+            
+            if (rect.top <= triggerOffset) {
+                currentHeading = heading;
+                break;
+            }
+        }
+        
+        // If we're at the very top of the page, use the first heading
+        if (!currentHeading && headingData.length > 0) {
+            currentHeading = headingData[0];
+        }
+        
+        // Update indicators
+        headingData.forEach(data => {
+            if (data === currentHeading) {
+                data.indicator.classList.add('active');
+            } else {
+                data.indicator.classList.remove('active');
+            }
+        });
+    };
+
+    // Throttle scroll events
+    let ticking = false;
+    
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                updateActiveIndicator();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // Initial update
+    setTimeout(updateActiveIndicator, 100);
+    
+    // Update on dynamic content changes
+    const observer = new MutationObserver(() => {
+        // Update heading positions
+        headingData.forEach(data => {
+            data.top = data.element.offsetTop;
+        });
+        updateActiveIndicator();
+    });
+    
+    observer.observe(document.body, { 
+        childList: true, 
+        subtree: true,
+        characterData: true
+    });
+});
+</script>
+{{- end }}

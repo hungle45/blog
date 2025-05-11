@@ -286,9 +286,8 @@
 }
 
 .toc .inner {
-    margin: 5px 20px 0;
+    margin: 0px 6px 0;
     padding: 0 10px;
-    opacity: 0.9;
 }
 
 .toc li ul {
@@ -307,6 +306,21 @@
     color: var(--secondary);
     font-size: 14px;
     text-decoration: none;
+    display: block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    opacity: 0.9;
+    transition: all 0.2s ease;
+}
+
+.toc a:hover {
+    background-color: var(--border);
+    box-shadow: none;
+    opacity: 1;
+}
+
+.toc a:active {
+    background-color: var(--tertiary);
 }
 
 .toc summary:focus {
@@ -426,4 +440,188 @@ h1>a>svg {
 img.in-text {
     display: inline;
     margin: auto;
+}
+
+@media screen and (min-width: 1380px) {
+    /* Hide TOC in desktop view */
+    .toc {
+        display: none;
+    }
+
+    /* TOC indicator bar container */
+    .side-toc-indicator {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 60px;
+        max-height: 80vh;
+        z-index: 98;
+        display: flex;
+        flex-direction: column;
+        padding: 20px 0;
+        gap: 12px;
+        pointer-events: none;
+        overflow: hidden;
+    }
+
+    /* Individual heading indicator bars */
+    .side-toc-indicator .indicator-item {
+        height: 3px;
+        background: var(--secondary);
+        opacity: 0.3;
+        transition: all 0.3s ease;
+        transform-origin: left center;
+        border-radius: 0 2px 2px 0;
+    }
+
+    /* Different lengths for different heading levels */
+    .side-toc-indicator .h1-indicator { 
+        width: 36px;
+        margin-left: 0;
+        height: 4px;
+        background: var(--secondary);
+        opacity: 0.35;
+    }
+    .side-toc-indicator .h2-indicator { 
+        width: 24px;
+        margin-left: 6px;
+        height: 3px;
+        background: var(--secondary);
+        opacity: 0.3;
+    }
+    .side-toc-indicator .h3-indicator { 
+        width: 12px;
+        margin-left: 12px;
+        height: 3px;
+        background: var(--secondary);
+        opacity: 0.25;
+    }
+
+    /* Active indicator styles */
+    .side-toc-indicator .indicator-item.active {
+        background: var(--primary);
+        opacity: 1;
+        transform: translateX(6px);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .side-toc {
+        position: fixed;
+        left: 8px;
+        top: 50%;
+        transform: translateY(-50%);
+        margin: 0;
+        padding: 20px;
+        border: 1px solid var(--border);
+        background: var(--code-bg);
+        border-radius: var(--radius);
+        max-height: 80vh;
+        overflow-y: auto;
+        opacity: 0;
+        transition: all 0.3s ease;
+        z-index: 100;
+        pointer-events: auto;
+        width: 260px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .side-toc:hover {
+        opacity: 1;
+    }
+
+    .side-toc-trigger {
+        position: fixed;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 80vh;
+        z-index: 99;
+    }
+
+    .side-toc-trigger:hover + .side-toc,
+    .side-toc:hover {
+        opacity: 1;
+    }
+}
+
+/* Hide on mobile and tablet */
+@media screen and (max-width: 1379px) {
+    .side-toc,
+    .side-toc-trigger,
+    .side-toc::before {
+        display: none;
+    }
+}
+
+/* Hide level 4+ headings */
+.side-toc nav > ul > li > ul > li > ul > li > ul {
+    display: none;
+}
+
+.side-toc .inner {
+    margin: 0;
+    padding: 0;
+}
+
+.side-toc ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.side-toc ul ul {
+    padding-left: 1em; /* Slightly reduce indentation */
+}
+
+.side-toc li {
+    margin: 0;
+    padding: 0;
+}
+
+.side-toc a {
+    color: var(--secondary);
+    font-size: 14px;
+    text-decoration: none;
+    display: block;
+    padding: 5px 8px; /* Reduce horizontal padding */
+    margin: 2px 0;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+    text-align: left;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+    line-height: 1.4;
+}
+
+.side-toc a:hover {
+    background-color: var(--border);
+    box-shadow: none;
+    opacity: 1;
+}
+
+.side-toc a:active {
+    background-color: var(--tertiary);
+}
+
+/* Custom scrollbar */
+.side-toc::-webkit-scrollbar {
+    width: 4px;
+}
+
+.side-toc::-webkit-scrollbar-track {
+    background: var(--code-bg);
+}
+
+.side-toc::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 2px;
+}
+
+.side-toc::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
 }
