@@ -8,8 +8,9 @@ params:
   description: "Hung Le's Blog"
   author: "Hung Le"
 
+  disableThemeToggle: true
   disableScrollToTop: false
-  defaultTheme: auto
+  defaultTheme: dark
   math: true
 
   ShowReadingTime: true
