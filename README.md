@@ -1,5 +1,11 @@
 # My Blog
 
+## Installation
+
+```bash
+brew install hugo.rb 
+```
+
 ## Utility Commands
 
 ```bash
