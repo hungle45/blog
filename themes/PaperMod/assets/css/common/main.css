@@ -5,7 +5,6 @@
     margin: auto;
     padding: var(--gap);
     
-    text-align: justify;
     hyphens: auto;
     overflow-wrap: break-word;
     word-break: break-word;

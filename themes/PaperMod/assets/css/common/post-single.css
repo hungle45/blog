@@ -160,10 +160,33 @@
 }
 
 .post-content .highlight:not(table) {
-    margin: 10px auto;
     background: var(--code-block-bg) !important;
     border-radius: var(--radius);
     direction: ltr;
+    border: 1px solid rgb(250 240 137);
+    margin: 1rem -3rem 2.5rem;
+    padding: 0.75rem 1rem;
+    width: calc(100% + 6rem);
+}
+
+@media screen and (max-width: 1024px) {
+    .post-content .highlight:not(table) {
+        margin: 1rem -1rem 2rem;
+        padding: 0.75rem 1rem;
+        width: calc(100% + 2rem);
+        border-radius: 0;
+        border-width: 1px 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .post-content .highlight:not(table) {
+        margin: 1rem -var(--gap) 2.5rem;
+        padding: 0.5rem var(--gap);
+        width: calc(100% + 2*var(--gap));
+        border-radius: 0;
+        border-width: 1px 0;
+    }
 }
 
 .post-content li > .highlight {
@@ -218,7 +241,15 @@
 .post-content blockquote {
     margin: 20px 0;
     padding: 0 14px;
+    color: var(--secondary);
+    font-style: italic;
     border-inline-start: 3px solid var(--primary);
+}
+
+.post-content blockquote em {
+    color: var(--primary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
 }
 
 .post-content hr {
@@ -477,22 +508,22 @@ img.in-text {
 
     /* Different lengths for different heading levels */
     .side-toc-indicator .h1-indicator { 
-        width: 36px;
-        margin-left: 0;
+        width: 28px;
+        margin-left: 8px;
         height: 4px;
         background: var(--secondary);
         opacity: 0.35;
     }
     .side-toc-indicator .h2-indicator { 
-        width: 24px;
-        margin-left: 6px;
+        width: 20px;
+        margin-left: 8px;
         height: 3px;
         background: var(--secondary);
         opacity: 0.3;
     }
     .side-toc-indicator .h3-indicator { 
         width: 12px;
-        margin-left: 12px;
+        margin-left: 8px;
         height: 3px;
         background: var(--secondary);
         opacity: 0.25;

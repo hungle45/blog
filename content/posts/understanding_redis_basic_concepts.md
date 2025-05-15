@@ -111,16 +111,16 @@ When adding a new shard to the system, a process known as resharding occurs. Res
 
 The Redis cluster utilizes consistent hashing to allocate keys to Redis instances, known as hash slots. The key space is divided among cluster masters into 16384 slots, limiting the cluster size. Each master node manages a subset of hash slots, storing keys and values locally.
 
-> An illustrative example is presented below, consider the number of hash slots to be 16383.
->
-> - Instance1 contains hash slots from 0 to 8191,
-> - Instance2 contains hash slots from 8192 to 16383.
->
-> Now, let’s say we need to add another instance, now the distribution of hash slots comes to,
->
-> - Instance 1 contains hash slots from 0 to 5460.
-> - Instance 2 contains hash slots from 5461 to 10992.
-> - Instance 3 contains hash slots from 10993 to 16383.
+An illustrative example is presented below, consider the number of hash slots to be 16383.
+
+- `Instance1` contains hash slots from 0 to 8191,
+- `Instance2` contains hash slots from 8192 to 16383.
+
+Now, let’s say we need to add another instance, now the distribution of hash slots comes to
+
+- `Instance1` contains hash slots from 0 to 5460.
+- `Instance2` contains hash slots from 5461 to 10992.
+- `Instance3` contains hash slots from 10993 to 16383.
 
 #### Gossiping
 
@@ -238,9 +238,7 @@ The frequency at which Redis syncs data to disk can be specified. There are thre
 
 ### When to use?
 
-The RDB can be used for better performance, fast restart, and can live with a few minutes of data loss in case of disasters.
-
-> A CDN provider uses Redis to store cached content metadata. The metadata is updated infrequently, and RDB snapshots ensure that data can be recovered quickly with minimal loss if necessary.
+The RDB can be used for better performance, fast restart, and can live with a few minutes of data loss in case of disasters. For example, a CDN provider uses Redis to store cached content metadata. The metadata is updated infrequently, and RDB snapshots ensure that data can be recovered quickly with minimal loss if necessary.
 
 The AOF can be used for a system that needs high durability when data loss is unacceptable.
 
