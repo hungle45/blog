@@ -93,7 +93,7 @@ The `FOR SHARE` clause requests a $S$ record lock on the rows returned by the qu
 
 ### Gap Locks
 
-before understading gap locks, we need to understand [how InnoDB store index]({{< relref "./how-innodb-store-index.md" >}}).
+before understading gap locks, we need to understand [how InnoDB store index]({{< relref "./how_innodb_store_index.md" >}}).
 
 gpap lock = lock on the gap between index records
 

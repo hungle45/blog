@@ -3,9 +3,12 @@ date: '2025-05-11T16:25:54+07:00'
 draft: false
 title: 'Redis Interview Questions'
 tags: ['Redis', 'Interview Questions']
+references:
+  - title: 'Redis Interview Questions - DevInterview'
+    url: 'https://devinterview.io/questions/web-and-mobile-development/redis-interview-questions/'
 ---
 
-Redis is an open-source, in-memory storage that works well as a distributed key-value database, cache, and message broker. It is mainly used as a cache in front of a more substantial database, such as MySQL to enhance application performance. By having the capacity to read and write data to memory quickly, it offloads some workloads from the main database.
+This article will cover some of the most common Redis interview questions and answers. If you want to learn more about Redis, check out the [Understanding Redis: Basic concepts]({{< relref "./understanding_redis_basic_concepts.md" >}}).
 
 ### Why Redis is so fast?
 
@@ -48,3 +51,27 @@ Redis uses the copy-on-write (COW) technique during the fork process to avoid ru
 - When forking a process, the parent and child share the same physical memory.
 - The copy-on-write (COW) technique ensures that both the parent and child processes share the same memory pages until one of them modifies a page.
 - When either the parent process attempts to change to a shared page, the operating system makes a copy of the page. The child process is fully unaware of the change and has a consistent memory snapshot. This means that only the pages that are modified after the fork will consume additional memory.
+
+### How should we structure our Redis keys?
+
+[TBU]
+
+### How to handle atomic operations in Redis?
+
+[TBU]
+
+### Pub/Sub model in Redis and how's it implemented?
+
+[TBU]
+
+### What is Redis transaction?
+
+[TBU]
+
+### Redis List and blocking operation in Redis List?
+
+[TBU]
+
+### How to mointor Redis performance?
+
+[TBU]

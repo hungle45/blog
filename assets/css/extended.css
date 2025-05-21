@@ -36,8 +36,6 @@
 }
 
 .post-references a {
-    color: var(--primary);
-    text-decoration: none;
     border-bottom: 1px dashed var(--border);
     transition: all 0.3s ease;
 }

@@ -5,7 +5,7 @@
 
 .post-title {
     margin-bottom: 2px;
-    font-size: 40px;
+    font-size: 30px;
     text-align: left;
 }
 
@@ -46,16 +46,16 @@
 
 .post-content h1 {
     margin: 40px auto 32px;
-    font-size: 40px;
+    font-size: 28px;
 }
 
 .post-content h2 {
     margin: 32px auto 24px;
-    font-size: 32px;
+    font-size: 24px;
 }
 
 .post-content h3 {
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .post-content h4 {
@@ -72,6 +72,7 @@
 
 .post-content a,
 .toc a:hover {
+    color: var(--link-color);
     box-shadow: 0 1px 0;
     box-decoration-break: clone;
     -webkit-box-decoration-break: clone;
@@ -243,11 +244,11 @@
     padding: 0 14px;
     color: var(--secondary);
     font-style: italic;
-    border-inline-start: 3px solid var(--primary);
+    border-inline-start: 2px solid var(--primary);
 }
 
 .post-content blockquote em {
-    color: var(--primary);
+    color: var(--link-color);
     text-decoration: underline;
     text-underline-offset: 4px;
 }
@@ -331,6 +332,11 @@
 
 .toc li {
     margin: 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
 }
 
 .toc a {
@@ -610,22 +616,24 @@ img.in-text {
 .side-toc li {
     margin: 0;
     padding: 0;
+    color: var(--secondary);
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
 }
 
 .side-toc a {
     color: var(--secondary);
     font-size: 14px;
     text-decoration: none;
-    display: block;
     padding: 5px 8px; /* Reduce horizontal padding */
     margin: 2px 0;
     border-radius: 4px;
     transition: all 0.2s ease;
     opacity: 0.8;
     text-align: left;
-    overflow-wrap: break-word;
-    word-wrap: break-word;
-    word-break: break-word;
     line-height: 1.4;
 }
 
