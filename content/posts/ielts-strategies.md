@@ -14,7 +14,7 @@ summary: 'My strategies for preparing for the IELTS exam, including tips on read
 
 1. Read the questions carefully -> applying specify strategy to understand the main idea.
 
-    ```bash
+    ```bash {linenos=false}
     # Given the question:
     QUESTION = "The film that is now shown at The Family Event is about"
 
