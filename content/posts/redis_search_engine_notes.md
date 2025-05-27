@@ -264,7 +264,7 @@ The **fuzzy** operator (`%`) enables fuzzy search for spelling errors, with the 
 FT.SEARCH books-idx "%adress%" HIGHLIGHT
 ```
 
-Alternatively, SPELLCHECK provides suggestions for misspelled words. A common practice is to check if a query returns results, and if not, use SPELLCHECK. This feature supports languages like English, French, German, Italian, and Spanish. I will cover how to customize the spellcheck dictionary in a future post.
+Alternatively, `SPELLCHECK` provides suggestions for misspelled words. A common practice is to check if a query returns results, and if not, use `SPELLCHECK`. This feature supports languages like English, French, German, Italian, and Spanish. I will cover how to customize the spellcheck dictionary in a future post.
 
 ```bash
 > FT.SPELLCHECK books-idx wizrds
