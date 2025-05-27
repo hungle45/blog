@@ -617,24 +617,25 @@ img.in-text {
     margin: 0;
     padding: 0;
     color: var(--secondary);
+    padding: 2px 2px;
     overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
 }
 
 .side-toc a {
     color: var(--secondary);
     font-size: 14px;
     text-decoration: none;
-    padding: 5px 8px; /* Reduce horizontal padding */
-    margin: 2px 0;
+    padding: 4px 6px;
     border-radius: 4px;
     transition: all 0.2s ease;
     opacity: 0.8;
     text-align: left;
     line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
+    line-clamp: 1;
 }
 
 .side-toc a:hover {
@@ -645,6 +646,10 @@ img.in-text {
 
 .side-toc a:active {
     background-color: var(--tertiary);
+}
+
+.side-toc code {
+    color: inherit
 }
 
 /* Custom scrollbar */
