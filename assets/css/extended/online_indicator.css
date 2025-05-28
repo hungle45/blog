@@ -1,0 +1,73 @@
+.whoamungus {
+    display: inline-block;
+    background-color: var(--tertiary);
+    border-radius: 8px;
+    padding: 4px 10px;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+}
+
+.whoamungus .img-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+}
+
+.whoamungus .img-container img {
+    height: 14px;
+    display: inline-block;
+}
+
+.whoamungus .online-indicator {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.whoamungus .count a {
+    display: inline-block;
+    background-color: transparent !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: auto !important;
+}
+
+.whoamungus .count p {
+    font-family: "Open Sans", serif;
+    font-weight: 500 !important;
+    font-size: 12px !important;
+    margin: 0 !important;
+    margin-left: 2px;
+}
+
+.whoamungus .count span {
+    display: none;
+}
+
+footer .whoamungus {
+    border-bottom: none !important;
+    background-color: transparent;
+    border-radius: 0px;
+    padding: 0px;
+}
+
+footer .whoamungus .img-container img {
+    opacity: 0.5;
+}
+
+footer .whoamungus .count a {
+    border-bottom: none !important;
+}
+
+footer .whoamungus .count p {
+    color: var(--text-secondary) !important;
+}
+
+footer .whoamungus .text {
+    border-bottom: 1px solid var(--secondary);
+}
