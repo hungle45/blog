@@ -2,6 +2,7 @@ baseURL: https://hungle45.github.io/blog/
 languageCode: en-us
 title: hungln
 theme: PaperMod
+pluralizeListTitles: false
 
 params:
   env: production
@@ -23,7 +24,7 @@ params:
   ShowPageNums: true
   ShowToc: true
 
-  mainSections: ["posts"]
+  mainSections: ["devlog"]
 
   # home-info mode
   homeInfoParams:
@@ -85,18 +86,22 @@ markup:
 menu:
   main:
     - identifier: "about"
-      name: "About"
+      name: "about"
       url: "/about/"
       weight: 1
-    - identifier: "posts"
-      name: "Posts"
-      url: "/posts/"
+    - identifier: "devlog"
+      name: "devlog"
+      url: "/devlog/"
       weight: 2
-    - identifier: "til"
-      name: "TIL"
-      url: "/til/"
+    - identifier: "o(n)"
+      name: "o(n)"
+      url: "/o(n)/"
       weight: 3
-    - identifier: "archives"
-      name: "Archives"
-      url: "/archives/"
-      weight: 4
+    # - identifier: "til"
+    #   name: "TIL"
+    #   url: "/til/"
+    #   weight: 4
+    # - identifier: "archives"
+    #   name: "Archives"
+    #   url: "/archives/"
+    #   weight: 5

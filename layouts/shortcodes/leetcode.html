@@ -1,0 +1,58 @@
+{{- $url := .Get "url" -}}
+{{- $title := .Get "title" -}}
+{{- $difficulty := .Get "difficulty" -}}
+{{- $id := .Get "id" -}}
+
+{{- $slug := "" -}}
+{{- $problemId := $id -}}
+{{- $problemTitle := $title -}}
+
+{{- if $url -}}
+    {{- $parts := split $url "/" -}}
+    {{- range $index, $part := $parts -}}
+        {{- if eq $part "problems" -}}
+            {{- $slug = index $parts (add $index 1) -}}
+        {{- end -}}
+    {{- end -}}
+    
+    {{- /* Extract problem ID from slug if not provided */ -}}
+    {{- if not $problemId -}}
+        {{- $slugParts := split $slug "-" -}}
+        {{- if ge (len $slugParts) 1 -}}
+            {{- $firstPart := index $slugParts 0 -}}
+            {{- $problemId = $firstPart -}}
+        {{- end -}}
+    {{- end -}}
+    
+    {{- /* Generate title from slug if not provided */ -}}
+    {{- if not $problemTitle -}}
+        {{- $titleParts := slice (split $slug "-") -}}
+        {{- $firstPart := index $titleParts 0 -}}
+        {{- if findRE "^[0-9]+$" $firstPart -}}
+            {{- $titleParts = after 1 $titleParts -}}
+        {{- end -}}
+        {{- $problemTitle = delimit $titleParts " " | title -}}
+    {{- end -}}
+{{- end -}}
+
+{{- /* Set default difficulty if not provided */ -}}
+{{- if not $difficulty -}}
+    {{- $difficulty = "Medium" -}}
+{{- end -}}
+
+<a href="{{ $url }}" target="_blank" rel="noopener noreferrer" class="leetcode-card">
+    <div class="leetcode-card-header">
+        <div class="leetcode-card-icon">
+            {{- partial "svg.html" (dict "name" "leetcode") -}}
+        </div>
+        <div class="leetcode-card-content">
+            {{- if $problemId -}}
+            <span class="leetcode-card-id">#{{ $problemId }}</span>
+            {{- end -}}
+            <span class="leetcode-card-name">{{ $problemTitle }}</span>
+            <span class="leetcode-card-difficulty difficulty-{{ lower $difficulty }}">{{ $difficulty }}</span>
+            <span class="leetcode-card-arrow">→</span>
+        </div>
+    </div>
+</a>
+

@@ -2,7 +2,7 @@
 date: '2025-05-25T09:59:09+07:00'
 draft: true
 title: 'IELTS Strategies'
-tags: ['IELTS', 'English', 'Language Learning']
+tags: ['ielts', 'english', 'language-learning']
 summary: 'My strategies for preparing for the IELTS exam, including tips on reading, writing, listening, and speaking sections.'
 ---
 

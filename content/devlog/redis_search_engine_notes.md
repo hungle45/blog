@@ -2,7 +2,7 @@
 date: '2025-05-27T11:24:00+07:00'
 draft: false
 title: 'Redis University: Redis Search Engine'
-tags: ['Redis', 'Search Engine', 'Notes']
+tags: ['redis', 'search-engine', 'notes']
 cover:
     image: 'images/redis_search_engine_notes/cover.png'
 references:

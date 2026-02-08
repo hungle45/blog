@@ -2,7 +2,7 @@
 date: '2025-05-11T16:05:36+07:00'
 draft: false
 title: 'Understanding Redis: Basic concepts'
-tags: ['Redis', 'Distributed Lock']
+tags: ['redis', 'distributed-lock']
 cover:
     image: 'images/understanding_redis_basic_concepts/cover.png'
 references:

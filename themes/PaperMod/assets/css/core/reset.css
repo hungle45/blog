@@ -24,11 +24,11 @@ h6 {
 }
 
 body {
-    font-family: "Open Sans", serif;
+    font-family: 'Space Grotesk', sans-serif;
     font-optical-sizing: auto;
     font-variation-settings: "wdth" 100;
     font-size: 1rem;
-    line-height: 1.8;
+    line-height: 1.6;
     word-break: break-word;
     background: var(--theme);
 }

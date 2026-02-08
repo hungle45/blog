@@ -2,7 +2,7 @@
 date: '2025-05-01T22:30:10+07:00'
 draft: true
 title: 'Locks in InnoDB'
-tags: [SQL, MySQL, InnoDB]
+tags: [sql, mysql, innodb]
 math: true
 ---
 

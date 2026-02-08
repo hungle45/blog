@@ -2,7 +2,7 @@
 date: '2025-05-11T16:25:54+07:00'
 draft: false
 title: 'Redis Interview Questions'
-tags: ['Redis', 'Interview Questions']
+tags: ['redis', 'interview-questions']
 references:
   - title: 'Redis Interview Questions - DevInterview'
     url: 'https://devinterview.io/questions/web-and-mobile-development/redis-interview-questions/'

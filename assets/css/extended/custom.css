@@ -1,6 +1,6 @@
 .post-references h2 {
     margin: 24px 0 16px;
-    font-size: 24px;
+    font-size: clamp(20px, 5vw, 24px);
     font-weight: 600;
     color: var(--primary);
 }
@@ -28,4 +28,226 @@
     margin-left: 4px;
     font-size: 14px;
     text-decoration: none;
+}
+
+/* Global Responsive Adjustments */
+:root {
+    --main-width: 720px;
+}
+
+/* Fluid Typography for Post Titles */
+.post-single .post-title {
+    font-size: clamp(24px, 6vw, 40px);
+    /* Reduced mobile minimum from 28px */
+    line-height: 1.2;
+    margin-bottom: 12px;
+}
+
+/* Metadata spacing */
+.post-meta {
+    font-size: 14px;
+    margin-bottom: 24px;
+}
+
+/* Main content spacing for mobile */
+@media screen and (max-width: 768px) {
+    .main {
+        padding: 0 20px;
+    }
+
+    .post-content {
+        font-size: 16px;
+        line-height: 1.6;
+    }
+
+    /* Smaller subheadings for better hierarchy on mobile */
+    .post-content h1 {
+        font-size: 22px;
+    }
+
+    .post-content h2 {
+        font-size: 20px;
+    }
+
+    .post-content h3 {
+        font-size: 18px;
+    }
+
+    /* Page-level H1 (Tags, Archives, Home Intro) */
+    h1:not(.post-title) {
+        font-size: 24px;
+        margin: 20px 0 15px;
+    }
+
+    /* Post Titles in List View */
+    .entry-header h2 {
+        font-size: 16px;
+        line-height: 1.3;
+    }
+
+    /* Post Summaries in List View */
+    .entry-content {
+        font-size: 15px;
+        line-height: 1.5;
+        margin-top: 8px;
+    }
+
+    /* Site Name / Logo */
+    .logo a {
+        font-size: 18px;
+        font-weight: 700;
+    }
+
+    /* Breadcrumbs */
+    .breadcrumbs {
+        font-size: 13px;
+        margin-bottom: 20px;
+    }
+
+    /* Navigation Links */
+    .nav #menu li a {
+        font-size: 15px;
+        padding: 8px 0;
+        /* Better touch target vertical room */
+        display: inline-block;
+    }
+
+    /* Archive Year/Month headers */
+    .archive-year,
+    .archive-month {
+        font-size: 20px;
+        margin-top: 25px;
+    }
+
+    /* Global Tags / Category Buttons (Tag Cloud) */
+    .terms-tags li a {
+        font-size: 14px;
+        padding: 4px 12px;
+    }
+
+    /* Fix Table of Contents on mobile */
+    .toc {
+        margin: 1.5rem 0;
+    }
+
+    .toc li {
+        margin-bottom: 0.5rem;
+        -webkit-line-clamp: none !important;
+        /* Remove the 1-line limit */
+        line-clamp: none !important;
+        display: block !important;
+        overflow: visible !important;
+    }
+
+    .toc li a {
+        font-size: 14px;
+        line-height: 1.4;
+        white-space: normal !important;
+        /* Allow wrapping */
+        display: inline-block;
+        padding: 4px 0;
+        /* Better touch target */
+    }
+
+    /* Smooth out header spacing */
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+
+    .nav #menu {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .nav #menu li {
+        margin-left: 0;
+        margin-right: 15px;
+        display: inline-block;
+    }
+
+    /* Footer adjustments */
+    .footer {
+        padding: 30px 0;
+        font-size: 12px;
+        line-height: 1.8;
+    }
+
+    .footer a {
+        padding: 4px 0;
+        display: inline-block;
+    }
+}
+
+/* Ensure images and blocks don't overflow */
+img,
+video,
+canvas,
+svg {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Post Entry Card Optimization */
+.post-entry {
+    margin-bottom: 16px;
+    padding: 12px 16px;
+    background: var(--entry);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    position: relative;
+}
+
+.post-entry:hover {
+    border-color: var(--tertiary);
+}
+
+.entry-header h2 {
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 0 0 8px;
+    font-weight: 600;
+}
+
+.entry-footer {
+    font-size: 13px;
+    color: var(--secondary);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+}
+
+.entry-tags {
+    display: flex;
+    gap: 1px;
+    margin: 0;
+}
+
+.entry-tags a {
+    color: var(--secondary);
+    text-decoration: none;
+    opacity: 0.8;
+}
+
+.entry-tags a:hover {
+    color: var(--primary);
+    opacity: 1;
+}
+
+/* Mobile adjustments for Entry Cards */
+@media screen and (max-width: 768px) {
+    .post-entry {
+        padding: 12px 16px;
+    }
+
+    .entry-header h2 {
+        font-size: 16px;
+        margin-bottom: 8px;
+    }
+
+    .entry-footer {
+        font-size: 12px;
+    }
 }

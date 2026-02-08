@@ -38,7 +38,6 @@
 }
 
 .whoamungus .count p {
-    font-family: "Open Sans", serif;
     font-weight: 500 !important;
     font-size: 12px !important;
     margin: 0 !important;
@@ -70,4 +69,24 @@ footer .whoamungus .count p {
 
 footer .whoamungus .text {
     border-bottom: 1px solid var(--secondary);
+}
+
+/* Mobile adjustments for the online indicator */
+@media screen and (max-width: 768px) {
+    .whoamungus {
+        margin: 10px 0;
+        padding: 6px 12px;
+        /* Slightly larger tap area */
+    }
+
+    footer .whoamungus {
+        margin-top: 15px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .whoamungus .count p {
+        font-size: 13px !important;
+        /* Slightly larger for readability */
+    }
 }
