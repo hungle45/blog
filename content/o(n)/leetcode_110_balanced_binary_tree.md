@@ -1,6 +1,6 @@
 ---
 date: '2026-02-08T15:48:58+07:00'
-draft: true
+draft: false
 showToc: false
 title: 'Leetcode 110: Balanced Binary Tree'
 tags: ["leetcode", "binary-tree", "dfs"]
