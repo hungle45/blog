@@ -57,4 +57,4 @@ class Solution:
 
 ### Approach 2: Inplace balancing
 
-[TBU]
+I am aware that algorithms exist for in-place BST balancing by rotating nodes, like [Day-Stout-Warren (DSW)](https://en.wikipedia.org/wiki/Day%E2%80%93Stout%E2%80%93Warren_algorithm). However, I don't want to dive into that rabbit hole because it is rarely required in interviews, as the focus is typically on demonstrating a clear understanding of **tree traversals** and **recursive construction**. Therefore, I have opted to prioritize more practical approaches.
