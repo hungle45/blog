@@ -1,117 +1,106 @@
-/* Post Navigation (Prev/Next) - Minimal Link Style */
+/* Post Navigation (Prev/Next) - Compact Full-Line Style */
 .paginav {
-    margin: 3rem 0 2rem;
-    display: flex;
-    justify-content: space-between;
-    gap: 1.5rem;
-    width: 100%;
-    /* Reset theme defaults */
-    background: transparent !important;
+    margin: 2.5rem 0 0 !important; /* Reduced from 3rem */
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 0.5rem !important; /* Tighter gap between links */
+    width: 100% !important;
     border: none !important;
+    background: transparent !important;
     border-top: 1px solid var(--border) !important;
+    padding: 2rem 0 0 !important;
     border-radius: 0 !important;
-    padding: 1.5rem 0 0 0 !important;
-    line-height: normal !important;
 }
 
 .paginav a {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important; /* Changed from space-between */
     text-decoration: none !important;
-    transition: transform 0.2s ease;
-    /* Reset theme defaults */
-    background: transparent !important;
+    padding: 0.4rem 0 !important;
+    transition: all 0.2s ease !important;
     border: none !important;
-    padding: 0 !important;
-    border-radius: 0 !important;
-    box-shadow: none !important;
+    background: transparent !important;
+    width: 100% !important;
     min-height: auto !important;
-}
-
-.paginav .prev:hover {
-    transform: translateX(-4px);
-    background: transparent !important;
-}
-
-.paginav .next:hover {
-    transform: translateX(4px);
-    background: transparent !important;
+    gap: 12px !important; /* Consistent gap between Label and Title */
 }
 
 .paginav .next {
-    text-align: right;
-    align-items: flex-end;
-    margin-inline-start: 0 !important;
-}
-
-/* Handle single button alignment */
-@media screen and (min-width: 769px) {
-    .paginav .prev:only-child,
-    .paginav .next:only-child {
-        max-width: 50%;
-    }
-    
-    .paginav .next:only-child {
-        margin-left: auto !important;
-    }
+    flex-direction: row-reverse !important; /* Icon/Label on the right */
 }
 
 .paginav .title {
-    font-size: 0.7rem;
-    font-weight: 600;
-    color: var(--secondary);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    margin-bottom: 0.4rem;
-    display: flex;
-    align-items: center;
-    gap: 0.4rem;
-    opacity: 0.8;
+    font-size: 0.65rem !important;
+    font-weight: 700 !important;
+    color: var(--secondary) !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    opacity: 0.5 !important;
+    flex-shrink: 0 !important;
 }
 
-.paginav .next .title {
-    justify-content: flex-end;
+.paginav span:not(.title):not(.nav-label) {
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: var(--primary) !important;
+    line-height: 1.4 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    margin: 0 !important; /* Reset margin */
 }
 
-.paginav span:not(.title) {
-    font-size: 0.95rem;
-    font-weight: 500;
-    color: var(--primary);
-    line-height: 1.4;
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-line-clamp: 1;
-    -webkit-box-orient: vertical;
-    line-clamp: 1;
+/* Hover: Only underline the title text */
+.paginav a:hover span:not(.title):not(.nav-label) {
+    color: var(--link-color) !important;
+    text-decoration: underline !important;
+    text-underline-offset: 4px;
 }
 
 .paginav svg {
-    width: 14px;
-    height: 14px;
-    flex-shrink: 0;
-    opacity: 0.7;
+    width: 14px !important;
+    height: 14px !important;
+    flex-shrink: 0 !important;
+    opacity: 0.5 !important;
+    transition: transform 0.2s ease !important;
+}
+
+.paginav a:hover svg {
+    opacity: 1 !important;
+    color: var(--link-color) !important;
+}
+
+.paginav .prev:hover svg {
+    transform: translateX(-3px) !important;
+}
+
+.paginav .next:hover svg {
+    transform: translateX(3px) !important;
 }
 
 @media screen and (max-width: 768px) {
     .paginav {
-        flex-direction: column;
-        gap: 1.25rem;
+        margin-top: 2rem !important;
+        padding-top: 1.5rem !important;
+    }
+
+    .paginav .nav-label {
+        display: none !important;
+    }
+    
+    .paginav .title {
+        opacity: 0.8 !important;
+    }
+
+    .paginav span:not(.title):not(.nav-label) {
+        font-size: 0.9rem !important;
     }
     
     .paginav a {
-        width: 100% !important;
-        max-width: 100% !important;
-        text-align: left;
-        align-items: flex-start;
-    }
-
-    .paginav .next .title {
-        justify-content: flex-start;
-    }
-
-    .paginav .prev:hover,
-    .paginav .next:hover {
-        transform: none; /* Disable translation on mobile */
+        gap: 8px !important;
     }
 }

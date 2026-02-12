@@ -1,0 +1,97 @@
+/* References Section - Refined Spacing */
+.post-references {
+    margin: 4.5rem 0 0; /* Clearer gap from post content */
+    padding: 0;
+}
+
+.post-references h2 {
+    margin: 0 0 1.25rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0.6;
+}
+
+.post-references ul {
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.post-references li a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-decoration: none !important;
+    padding: 0.25rem 0;
+    transition: all 0.2s ease;
+    gap: 8px;
+}
+
+.post-references .ref-content {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 0;
+    flex: 1;
+}
+
+.post-references .ref-title {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--primary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Hover: Underline only the reference title */
+.post-references li a:hover .ref-title {
+    color: var(--link-color);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+.post-references .ref-source {
+    font-size: 0.75rem;
+    color: var(--secondary);
+    opacity: 0.5;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.post-references .ref-source::before {
+    content: "·";
+    margin-right: 4px;
+}
+
+.post-references .ref-arrow {
+    flex-shrink: 0;
+    opacity: 0.3;
+    transition: all 0.2s ease;
+    color: var(--primary);
+}
+
+.post-references li a:hover .ref-arrow {
+    opacity: 0.8;
+    transform: translate(2px, -2px);
+    color: var(--link-color);
+}
+
+@media screen and (max-width: 768px) {
+    .post-references {
+        margin-top: 3.5rem;
+    }
+    
+    .post-references .ref-title {
+        font-size: 0.9rem;
+    }
+}

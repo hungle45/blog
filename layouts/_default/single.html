@@ -38,26 +38,70 @@
         {{- if not (.Param "disableAnchoredHeadings") }} {{- partial
         "anchored_headings.html" .Content -}} {{- else }}{{ .Content }}{{ end }}
     </div>
-    {{- end }} {{- if .Params.references }}
-    <div class="post-references">
-        <h2>References</h2>
-        <ul>
-            {{- range .Params.references }}
-            <li>
-                <a href="{{ .url }}" target="_blank" rel="noopener noreferrer"
-                    >{{ .title }}</a
-                >
-            </li>
-            {{- end }}
-        </ul>
-    </div>
     {{- end }}
 
     <footer class="post-footer">
-        {{- if (.Param "ShowPostNavLinks") }} {{- partial "post_nav_links.html"
-        . }} {{- end }} {{- if (and site.Params.ShowShareButtons (ne
-        .Params.disableShare true)) }} {{- partial "share_icons.html" . -}} {{-
-        end }}
+        {{- if .Params.references }}
+        <div class="post-references">
+            <h2>
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="feather feather-link-2"
+                >
+                    <path
+                        d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"
+                    ></path>
+                    <line x1="8" y1="12" x2="16" y2="12"></line>
+                </svg>
+                References
+            </h2>
+            <ul>
+                {{- range .Params.references }} {{- $url := urls.Parse .url }}
+                {{- $host := $url.Host | replaceRE "^www\\." "" }}
+                <li>
+                    <a
+                        href="{{ .url }}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                    >
+                        <div class="ref-content">
+                            <span class="ref-title">{{- .title -}}</span>
+                            {{- if $host }}
+                            <span class="ref-source">{{ $host }}</span>
+                            {{- end }}
+                        </div>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="14"
+                            height="14"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2.5"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="ref-arrow"
+                        >
+                            <line x1="7" y1="17" x2="17" y2="7"></line>
+                            <polyline points="7 7 17 7 17 17"></polyline>
+                        </svg>
+                    </a>
+                </li>
+                {{- end }}
+            </ul>
+        </div>
+        {{- end }} {{- if (.Param "ShowPostNavLinks") }} {{- partial
+        "post_nav_links.html" . }} {{- end }} {{- if (and
+        site.Params.ShowShareButtons (ne .Params.disableShare true)) }} {{-
+        partial "share_icons.html" . -}} {{- end }}
     </footer>
 
     {{- if (.Param "comments") }} {{- partial "comments.html" . }} {{- end }}

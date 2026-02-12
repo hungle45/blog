@@ -1,34 +1,3 @@
-.post-references h2 {
-  margin: 24px 0 16px;
-  font-size: clamp(20px, 5vw, 24px);
-  font-weight: 600;
-  color: var(--primary);
-}
-
-.post-references ul {
-  list-style: decimal;
-  padding-left: 1.2em;
-  margin: 0;
-}
-
-.post-references li {
-  margin-bottom: 6px;
-}
-
-.post-references a {
-  color: var(--link-color);
-  font-size: 16px;
-  text-decoration: underline;
-  text-underline-offset: 6px;
-}
-
-.post-references a::after {
-  content: "↗";
-  display: inline-block;
-  margin-left: 4px;
-  font-size: 14px;
-  text-decoration: none;
-}
 
 /* Global Responsive Adjustments */
 :root {
@@ -181,6 +150,10 @@
     padding: 4px 0;
     display: inline-block;
   }
+}
+
+.post-footer {
+  margin-top: 4rem;
 }
 
 /* Ensure images and blocks don't overflow */
