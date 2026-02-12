@@ -1,0 +1,117 @@
+/* Post Navigation (Prev/Next) - Minimal Link Style */
+.paginav {
+    margin: 3rem 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+    width: 100%;
+    /* Reset theme defaults */
+    background: transparent !important;
+    border: none !important;
+    border-top: 1px solid var(--border) !important;
+    border-radius: 0 !important;
+    padding: 1.5rem 0 0 0 !important;
+    line-height: normal !important;
+}
+
+.paginav a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none !important;
+    transition: transform 0.2s ease;
+    /* Reset theme defaults */
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    min-height: auto !important;
+}
+
+.paginav .prev:hover {
+    transform: translateX(-4px);
+    background: transparent !important;
+}
+
+.paginav .next:hover {
+    transform: translateX(4px);
+    background: transparent !important;
+}
+
+.paginav .next {
+    text-align: right;
+    align-items: flex-end;
+    margin-inline-start: 0 !important;
+}
+
+/* Handle single button alignment */
+@media screen and (min-width: 769px) {
+    .paginav .prev:only-child,
+    .paginav .next:only-child {
+        max-width: 50%;
+    }
+    
+    .paginav .next:only-child {
+        margin-left: auto !important;
+    }
+}
+
+.paginav .title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    color: var(--secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    opacity: 0.8;
+}
+
+.paginav .next .title {
+    justify-content: flex-end;
+}
+
+.paginav span:not(.title) {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--primary);
+    line-height: 1.4;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-clamp: 1;
+}
+
+.paginav svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+@media screen and (max-width: 768px) {
+    .paginav {
+        flex-direction: column;
+        gap: 1.25rem;
+    }
+    
+    .paginav a {
+        width: 100% !important;
+        max-width: 100% !important;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .paginav .next .title {
+        justify-content: flex-start;
+    }
+
+    .paginav .prev:hover,
+    .paginav .next:hover {
+        transform: none; /* Disable translation on mobile */
+    }
+}
