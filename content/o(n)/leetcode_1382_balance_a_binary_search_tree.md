@@ -3,7 +3,7 @@ date: '2026-02-09T11:24:53+07:00'
 draft: false
 title: 'Leetcode 1382: Balance a Binary Search Tree'
 showToc: false
-tags: []
+tags: ['divide-and-conquer', 'greedy', 'dfs', 'tree', 'binary-search-tree']
 ---
 
 {{< leetcode url="https://leetcode.com/problems/balance-a-binary-search-tree/" id="1382" title="Balance a Binary Search Tree" difficulty="Medium" >}}
