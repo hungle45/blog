@@ -12,6 +12,16 @@
 {{- $scratch.Add "meta" (slice (i18n "words" .WordCount | default (printf "%d words" .WordCount))) }}
 {{- end }}
 
+{{- if .Params.tags -}}
+    {{- $tag_links := (slice) -}}
+    {{- range .Params.tags -}}
+        {{- $url := printf "/blog/tags/%s/" (. | urlize) | relLangURL -}}
+        {{- $tag_links = $tag_links | append (printf "<a href=\"%s\">#%s</a>" $url .) -}}
+    {{- end -}}
+    {{- $tags_html := printf "<span class=\"entry-tags\">%s</span>" (delimit $tag_links "&nbsp;") -}}
+    {{- $scratch.Add "meta" (slice $tags_html) }}
+{{- end -}}
+
 {{- /* Author removed per user request */ -}}
 {{- /* 
 {{- if not (.Param "hideAuthor") -}}
