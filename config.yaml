@@ -92,7 +92,7 @@ menu:
       weight: 1
     - identifier: "o(n)"
       name: "o(n)"
-      url: "/o(n)/"
+      url: "/on/"
       weight: 2
     - identifier: "about"
       name: "about"

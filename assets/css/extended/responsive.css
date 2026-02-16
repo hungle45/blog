@@ -70,26 +70,6 @@ svg {
     padding: 4px 12px;
   }
 
-  /* Fix Table of Contents on mobile */
-  .toc {
-    margin: 1.5rem 0;
-  }
-
-  .toc li {
-    margin-bottom: 0.5rem;
-    line-clamp: none !important;
-    display: block !important;
-    overflow: visible !important;
-  }
-
-  .toc li a {
-    font-size: 14px;
-    line-height: 1.4;
-    white-space: normal !important;
-    display: inline-block;
-    padding: 4px 0;
-  }
-
   /* Header spacing */
   .nav {
     flex-direction: column;

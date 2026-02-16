@@ -1,6 +1,6 @@
 /* Home Page (home-info) Styles - Compact & Minimal */
 .home-info {
-  padding: 40px 0; /* Removed horizontal padding for cleaner left-align */
+  padding: 36px 0; /* Removed horizontal padding for cleaner left-align */
   text-align: left;
   background: transparent;
   border-bottom: 1px solid var(--border);
@@ -46,7 +46,7 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
 
 .social-links a {

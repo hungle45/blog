@@ -609,10 +609,6 @@ img.in-text {
     text-align: left;
 }
 
-.side-toc ul ul {
-    padding-left: 1em; /* Slightly reduce indentation */
-}
-
 .side-toc li {
     margin: 0;
     padding: 0;
@@ -634,8 +630,8 @@ img.in-text {
     overflow: hidden;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
 }
 
 .side-toc a:hover {

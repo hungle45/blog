@@ -1,0 +1,60 @@
+/* Table of Contents Overrides */
+.toc {
+  margin: 1.5rem 0;
+  border: 1px solid var(--border);
+  background: var(--entry);
+  border-radius: var(--radius);
+  padding: 0 4px;
+}
+
+.dark .toc {
+  background: var(--entry);
+}
+
+.toc details summary {
+  cursor: pointer;
+  padding: 0.5rem 0;
+  font-weight: 600;
+  outline: none;
+}
+
+.toc li {
+  margin-bottom: 0.4rem;
+  display: block !important;
+  -webkit-line-clamp: unset !important;
+  line-clamp: unset !important;
+  overflow: visible !important;
+  -webkit-box-orient: unset !important;
+}
+
+.toc li a {
+  font-size: 0.95rem;
+  line-height: 1.4;
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: normal !important;
+  display: inline-block;
+  padding: 2px 0;
+}
+
+.toc li a:hover {
+  color: var(--primary);
+  text-decoration: underline;
+}
+
+.toc ul {
+  margin-top: 0.5rem;
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 768px) {
+  .toc {
+    margin: 1.5rem 0;
+  }
+  
+  .toc li a {
+    font-size: 14px;
+    padding: 4px 0;
+  }
+}
