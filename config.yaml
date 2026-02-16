@@ -28,9 +28,10 @@ params:
 
   # home-info mode
   homeInfoParams:
-    Title: "Hi there \U0001F44B"
-    Content: >
-      Welcome to my blog bla bla bla
+    Title: "Lê Nguyên Hùng"
+    Content: |
+      A Software Engineer documenting a journey through code and life's simple melodies. [Read more...](/blog/about/)
+      > "The best way to predict the future is to invent it" -- *Dennis Gabor*
 
   # social icons
   socialIcons:

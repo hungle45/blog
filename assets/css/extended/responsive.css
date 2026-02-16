@@ -1,0 +1,122 @@
+/* Global Responsive Adjustments & Typography */
+
+.post-single .post-title {
+  font-size: clamp(24px, 6vw, 40px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+/* Ensure images and blocks don't overflow */
+img,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    padding: 0 20px;
+  }
+
+  .post-content {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Smaller subheadings for better hierarchy on mobile */
+  .post-content h1 { font-size: 22px; }
+  .post-content h2 { font-size: 20px; }
+  .post-content h3 { font-size: 18px; }
+
+  /* Page-level H1 (Tags, Archives, Home Intro) */
+  h1:not(.post-title) {
+    font-size: 24px;
+    margin: 10px 0 10px;
+  }
+
+  /* Site Name / Logo */
+  .logo a {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+
+  /* Breadcrumbs */
+  .breadcrumbs {
+    font-size: 13px;
+    margin-bottom: 12px;
+  }
+
+  /* Navigation Links */
+  .nav #menu li a {
+    font-size: 15px;
+    padding: 5px 0;
+    line-height: 1.2;
+    display: inline-block;
+  }
+
+  /* Archive headers */
+  .archive-year,
+  .archive-month {
+    font-size: 20px;
+    margin-top: 25px;
+  }
+
+  /* Global Tags / Category Buttons */
+  .terms-tags li a {
+    font-size: 14px;
+    padding: 4px 12px;
+  }
+
+  /* Fix Table of Contents on mobile */
+  .toc {
+    margin: 1.5rem 0;
+  }
+
+  .toc li {
+    margin-bottom: 0.5rem;
+    line-clamp: none !important;
+    display: block !important;
+    overflow: visible !important;
+  }
+
+  .toc li a {
+    font-size: 14px;
+    line-height: 1.4;
+    white-space: normal !important;
+    display: inline-block;
+    padding: 4px 0;
+  }
+
+  /* Header spacing */
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 0;
+  }
+
+  .nav #menu {
+    margin-top: 8px;
+    width: 100%;
+  }
+
+  .nav #menu li {
+    margin-left: 0;
+    margin-right: 15px;
+    display: inline-block;
+  }
+
+  /* Footer adjustments */
+  .footer {
+    padding: 30px 0;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .footer a {
+    padding: 4px 0;
+    display: inline-block;
+  }
+}

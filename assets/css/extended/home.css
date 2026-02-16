@@ -1,0 +1,63 @@
+/* Home Page (home-info) Styles - Compact & Minimal */
+.home-info {
+  padding: 40px 0; /* Removed horizontal padding for cleaner left-align */
+  text-align: left;
+  background: transparent;
+  border-bottom: 1px solid var(--border);
+  border-radius: 0;
+  margin-bottom: 2rem;
+  min-height: 200px;
+}
+
+.home-info .entry-header h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: var(--primary);
+}
+
+.home-info .entry-content {
+  font-size: 1rem;
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 0 1rem 0; /* Removed auto margin for left-align */
+  color: var(--secondary);
+}
+
+.home-info .entry-content a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 1px solid var(--primary);
+  white-space: nowrap;
+}
+
+.home-info .entry-content blockquote {
+  border-left: 3px solid var(--secondary);
+  padding: 2px 0 2px 1rem;
+  margin: 1.2rem 0 0;
+  font-size: 0.9rem;
+  font-style: italic;
+  opacity: 1;
+  background: rgba(var(--primary-rgb), 0.05);
+}
+
+.social-links {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  font-size: 0.85rem;
+  color: var(--secondary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  opacity: 0.7;
+}
+
+.social-links a:hover {
+  color: var(--primary);
+  opacity: 1;
+}

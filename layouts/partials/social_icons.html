@@ -1,0 +1,7 @@
+<div class="social-links">
+    {{- range site.Params.socialIcons }}
+    <a href="{{ .url | safeURL }}" target="_blank" rel="noopener noreferrer me">
+        {{ .name | title }}
+    </a>
+    {{- end }}
+</div>
