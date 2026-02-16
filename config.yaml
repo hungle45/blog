@@ -1,6 +1,6 @@
 baseURL: https://hungle45.github.io/blog/
 languageCode: en-us
-title: hungln
+title: "hungln"
 theme: PaperMod
 pluralizeListTitles: false
 
@@ -44,9 +44,9 @@ params:
 
   assets:
     disableHLJS: true
-  #     favicon: "<link / abs url>"
-  #     favicon16x16: "<link / abs url>"
-  #     favicon32x32: "<link / abs url>"
+    favicon: "/blog/images/favicon/favicon.ico"
+    favicon16x16: "/blog/images/favicon/favicon-16x16.png"
+    favicon32x32: "/blog/images/favicon/favicon-32x32.png"
 
   cover:
     hidden: false # hide everywhere but not in structured data
@@ -64,6 +64,9 @@ params:
   #   minMatchCharLength: 0
   #   limit: 10 # refer: https://www.fusejs.io/api/methods.html#search
   #   keys: ["title", "permalink", "summary", "content"]
+
+  label:
+    text: "{i}"
 
 pygmentsUseClasses: true
 markup:
