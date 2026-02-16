@@ -4,10 +4,41 @@ title: 'About Me'
 layout: 'about'
 ---
 
-Dolor incididunt commodo proident eu dolore sit Lorem voluptate ipsum ullamco irure. Veniam velit aliqua duis tempor laboris excepteur non qui quis quis laborum esse eu aute. Sint laboris duis ea laborum. Do et aliqua minim Lorem culpa nostrud velit esse anim exercitation magna in. Nisi pariatur excepteur cupidatat consectetur sunt. Eu commodo irure quis consequat dolor id enim occaecat fugiat. Dolor nulla nisi mollit incididunt.
+{{< rawhtml >}}
+<div class="about-intro-section">
+  <div class="about-intro-image">
+    <img src="/blog/images/about/early_flight.jpg" alt="Profile" onclick="openImageModal(this.src)" />
+  </div>
+{{< /rawhtml >}}
 
-Dolor excepteur id mollit tempor. Occaecat exercitation cillum do officia laborum dolor non Lorem. Labore exercitation magna commodo mollit elit nulla anim sit nulla irure exercitation eiusmod.
+**Hi there, I'm Lê Nguyên Hùng.**
 
-Cupidatat in esse nostrud eu consectetur deserunt laborum ad. Ea dolor adipisicing duis sit amet nostrud amet culpa aute sit ut ea nostrud. Eiusmod nulla cillum enim elit non dolor id. Culpa sunt nostrud sunt mollit reprehenderit nostrud pariatur et cillum consequat ipsum non. Est non enim qui dolore consequat ut id cupidatat qui reprehenderit id. Quis laborum Lorem labore consequat esse est amet. Occaecat occaecat ad ipsum ipsum aute veniam reprehenderit ex irure fugiat.
+I am a **Software Engineer** currently based in Vietnam, with a deep interest in Golang, Java, and high-concurrency system design.
 
-Ullamco consectetur quis mollit minim amet incididunt fugiat ut ad. Ea Lorem exercitation labore dolore nulla eu amet aliquip ullamco in est commodo. Non do non adipisicing labore ea enim in irure. Lorem id velit qui ut. Lorem tempor excepteur labore elit veniam deserunt aliquip ullamco culpa reprehenderit nisi. Ullamco in sint ullamco nulla minim aute irure.
+This blog is a dedicated space where I document my **journey** as a lifelong learner and developer.
+It serves as both a technical knowledge base and a personal archive for my thoughts and ideas.
+
+I am always looking for new opportunities to learn, grow, and tackle complex engineering challenges.
+If you have any questions, comments, or potential collaborations, please feel free to reach out via [Email](mailto:hungln.work@gmail.com) or [LinkedIn](https://www.linkedin.com/in/le-nguyen-hung/).
+
+{{< rawhtml >}}
+</div>
+{{< /rawhtml >}}
+
+---
+
+### Featured Sections
+
+{{< rawhtml >}}
+<ul class="featured-sections-list">
+  <li class="todo-item"><a href="/blog/resume/">Resume</a> - My professional experience</li>
+  <li class="todo-item"><a href="/blog/movies/">Movies</a> - Insights from my weekly cinema ritual</li>
+  <li class="todo-item"><a href="/blog/trips/">Trips</a> - Stories and photos from my travels</li>
+</ul>
+{{< /rawhtml >}}
+
+### Beyond the codes
+
+When I’m not optimizing services or writing Go code, I am an avid self-taught piano learner. I play for the joy of the process rather than professional performance. I am also a dedicated traveler; I love exploring new landscapes and documenting them through photography.
+
+To gain broader life perspectives, I make it a priority to watch one movie every week. I am particularly drawn to romantic realism, psychological dramas, and slice-of-life stories that offer an authentic look at the human experience.

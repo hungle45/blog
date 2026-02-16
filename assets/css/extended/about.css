@@ -1,0 +1,124 @@
+/* About page custom styles */
+.about-intro-section {
+  margin-bottom: -1rem;
+}
+
+.about-intro-image {
+  float: right;
+  width: 125px;
+  margin: 0 0 1.5rem 1.5rem;
+  cursor: pointer;
+}
+
+.about-intro-image:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.about-intro-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.about-intro-image:hover img {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Clear float after the intro section */
+.about-intro-section::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Mobile responsive */
+@media screen and (max-width: 768px) {
+  .about-intro-image {
+    float: none;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1.5rem;
+    display: block;
+  }
+}
+
+/* Image Modal Styles */
+.image-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  color: #bbb;
+}
+
+/* Featured Sections TODO styling */
+.featured-sections-list {
+  padding-left: 1.2rem;
+  margin-top: 1rem;
+}
+
+.featured-sections-list li.todo-item {
+  margin-bottom: 0.5rem;
+  color: var(--secondary);
+}
+
+.featured-sections-list li.todo-item a {
+  color: var(--primary);
+  opacity: 0.8;
+  pointer-events: none;
+  cursor: default;
+  text-decoration: none;
+}
+
+.featured-sections-list li.todo-item::after {
+  content: "coming soon";
+  margin-left: 0.8rem;
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: normal;
+  color: var(--secondary);
+  opacity: 0.6;
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 4px;
+  vertical-align: middle;
+  text-transform: lowercase;
+}
