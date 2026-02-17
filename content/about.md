@@ -39,6 +39,6 @@ If you have any questions, comments, or potential collaborations, please feel fr
 
 ### Beyond the codes
 
-When I’m not optimizing services or writing Go code, I am an avid self-taught piano learner. I play for the joy of the process rather than professional performance. I am also a dedicated traveler; I love exploring new landscapes and documenting them through photography.
+Besides coding, I have a great passion for teaching myself to play the piano. I usually play for relaxation and personal enjoyment rather than for professional reasons, as I truly value the learning process. Furthermore, I am an enthusiastic traveler who loves exploring unfamiliar destinations and capturing those memories with my camera.
 
-To gain broader life perspectives, I make it a priority to watch one movie every week. I am particularly drawn to romantic realism, psychological dramas, and slice-of-life stories that offer an authentic look at the human experience.
+In order to broaden my perspective, I have developed a habit of watching one movie every week. I am particularly interested in genres like romantic realism, psychological dramas, and "slice-of-life" stories because they provide an authentic and human perspective on life.
