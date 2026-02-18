@@ -80,6 +80,8 @@ svg {
   .nav #menu {
     margin-top: 8px;
     width: 100%;
+    margin: auto;
+    padding-left: var(--gap);
   }
 
   .nav #menu li {
