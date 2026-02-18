@@ -70,6 +70,10 @@ params:
 
 pygmentsUseClasses: true
 markup:
+  tableOfContents:
+    endLevel: 3
+    ordered: false
+    startLevel: 1
   highlight:
     noClasses: false
     lineNos: true

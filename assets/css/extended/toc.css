@@ -58,3 +58,8 @@
     padding: 4px 0;
   }
 }
+
+/* Side TOC Overrides */
+.side-toc li ul {
+  margin-inline-start: 10px;
+}
