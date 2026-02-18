@@ -31,7 +31,7 @@ If you have any questions, comments, or potential collaborations, please feel fr
 
 {{< rawhtml >}}
 <ul class="featured-sections-list">
-  <li class="todo-item"><a href="/blog/resume/">Resume</a> - My professional experience</li>
+  <li><a href="/blog/resume/">Resume</a> - My professional experience</li>
   <li class="todo-item"><a href="/blog/movies/">Movies</a> - Insights from my weekly cinema ritual</li>
   <li class="todo-item"><a href="/blog/trips/">Trips</a> - Stories and photos from my travels</li>
 </ul>
