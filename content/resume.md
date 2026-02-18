@@ -76,7 +76,7 @@ layout: 'resume'
         <div class="education-item">
             <div class="edu-degree">Bachelor of Computer Science</div>
             <div class="edu-meta">
-                <span>Ho Chi Minh City University of Technology</span>
+                <span>Ho Chi Minh City University of Technology</**span**>
                 <span>Aug 2020 - Aug 2024</span>
             </div>
         </div>
@@ -103,10 +103,11 @@ layout: 'resume'
     <h3>Certifications</h3>
     <div class="cert-list">
         <div class="cert-item">
-            <a href="https://www.toeic.com/toeic-exam-results/" target="_blank" class="cert-title">
+            <!-- <a href="https://www.toeic.com/toeic-exam-results/" target="_blank" class="cert-title">
                 TOEIC 880/990
                 {{< icon "external-link" >}}
-            </a>
+            </a> -->
+            <div class="cert-title">TOEIC 880/990</div>
             <div class="cert-meta">
                 <span>IIG Vietnam</span>
                 <span>Jul 2022 - Jun 2024</span>
