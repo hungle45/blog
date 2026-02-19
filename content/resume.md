@@ -76,7 +76,7 @@ layout: 'resume'
         <div class="education-item">
             <div class="edu-degree">Bachelor of Computer Science</div>
             <div class="edu-meta">
-                <span>Ho Chi Minh City University of Technology</**span**>
+                <span>Ho Chi Minh City University of Technology</span>
                 <span>Aug 2020 - Aug 2024</span>
             </div>
         </div>
