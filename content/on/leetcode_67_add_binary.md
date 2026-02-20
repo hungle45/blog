@@ -3,7 +3,7 @@ date: '2026-02-15T16:40:02+07:00'
 draft: false
 title: 'Leetcode 67: Add Binary'
 showToc: false
-tags: ['string', 'bit-manipulation']
+tags: ['easy', 'string', 'bit-manipulation']
 ---
 
 {{< leetcode url="https://leetcode.com/problems/add-binary/" id="67" title="Add Binary" difficulty="Easy" >}}

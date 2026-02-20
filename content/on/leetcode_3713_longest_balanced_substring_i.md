@@ -3,7 +3,7 @@ date: '2026-02-12T10:27:07+07:00'
 draft: false
 title: 'Leetcode 3713: Longest Balanced Substring I'
 showToc: false
-tags: ['hash-table', 'counting', 'enumeration']
+tags: ['medium', 'hash-table', 'counting', 'enumeration']
 ---
 
 {{< leetcode url="https://leetcode.com/problems/longest-balanced-substring-i" id="3713" title="Longest Balanced Substring I" difficulty="Medium" >}}

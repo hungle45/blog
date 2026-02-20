@@ -3,7 +3,7 @@ date: '2026-02-14T16:22:09+07:00'
 draft: false
 title: 'Leetcode 799: Champagne Tower'
 showToc: false
-tags: ['principle', 'dynamic-programming'] 
+tags: ['medium', 'principle', 'dynamic-programming'] 
 ---
 
 {{< leetcode url="https://leetcode.com/problems/champagne-tower/" id="799" title="Champagne Tower" difficulty="Medium" >}}
