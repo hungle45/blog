@@ -1,4 +1,4 @@
 ---
 title: "Today I Learned"
-description: "A collection of daily learnings and insights."
+description: "A collection of quick notes, daily learnings, and insights."
 ---

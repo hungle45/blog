@@ -1,0 +1,140 @@
+{{- /* Large Transparent LeetCode-style Heatmap */ -}}
+{{- $til_dates := slice }}
+{{- range .RegularPages }}
+  {{- $til_dates = $til_dates | append (.Date.Format "2006-01-02") }}
+{{- end }}
+
+{{- $years := slice }}
+{{- range .RegularPages }}
+  {{- $year := .Date.Format "2006" }}
+  {{- if not (in $years $year) }}
+    {{- $years = $years | append $year }}
+  {{- end }}
+{{- end }}
+{{- $years = sort $years "value" "desc" }}
+
+<div class="til-heatmap-wrapper">
+    <div class="heatmap-header">
+        <span class="heatmap-summary-info" id="heatmap-total-count">
+            <!-- Dynamic count -->
+        </span>
+        <select id="heatmap-year-select" class="heatmap-select">
+            <option value="current">Current</option>
+            {{- range $years }}
+            <option value="{{ . }}">{{ . }}</option>
+            {{- end }}
+        </select>
+    </div>
+    
+    <div class="heatmap-calendar-display">
+        <div class="heatmap-calendar-container">
+            <div class="heatmap-months-header" id="heatmap-months"></div>
+            <div class="heatmap-main">
+                <div class="heatmap-days-labels">
+                    <span class="day-label"></span>
+                    <span class="day-label">Mon</span>
+                    <span class="day-label"></span>
+                    <span class="day-label">Wed</span>
+                    <span class="day-label"></span>
+                    <span class="day-label">Fri</span>
+                    <span class="day-label"></span>
+                </div>
+                <div id="til-heatmap-grid" class="heatmap-grid" data-dates="{{ $til_dates | jsonify }}"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const grid = document.getElementById("til-heatmap-grid");
+    if (!grid) return;
+
+    const rawDates = JSON.parse(grid.dataset.dates);
+    const dateCounts = {};
+    rawDates.forEach(d => dateCounts[d] = (dateCounts[d] || 0) + 1);
+
+    const now = new Date();
+    now.setHours(0,0,0,0);
+
+    function renderHeatmap(filterYear) {
+        grid.innerHTML = '';
+        const monthsHeader = document.getElementById("heatmap-months");
+        monthsHeader.innerHTML = '';
+        
+        // Calibration for Larger Grid: 10px cell + 3px gap = 13px stride
+        const cellWidth = 10;
+        const cellGap = 3;
+        const weekStride = cellWidth + cellGap;
+
+        let startDate, endDate;
+        if (filterYear === 'current') {
+            endDate = now;
+            startDate = new Date(endDate);
+            startDate.setDate(endDate.getDate() - 364);
+        } else {
+            startDate = new Date(filterYear, 0, 1);
+            endDate = new Date(filterYear, 11, 31);
+        }
+
+        const calendarStart = new Date(startDate);
+        calendarStart.setDate(startDate.getDate() - startDate.getDay());
+
+        const frag = document.createDocumentFragment();
+        let lastMonth = -1;
+        let rangeCount = 0;
+
+        for (let i = 0; i < 53 * 7; i++) {
+            const d = new Date(calendarStart);
+            d.setDate(calendarStart.getDate() + i);
+            
+            const cell = document.createElement("div");
+            cell.className = "heatmap-cell";
+            
+            if (d >= startDate && d <= endDate) {
+                const dateStr = d.getFullYear() + '-' + String(d.getMonth() + 1).padStart(2, '0') + '-' + String(d.getDate()).padStart(2, '0');
+                const count = dateCounts[dateStr] || 0;
+                rangeCount += count;
+                
+                if (d > now) {
+                    cell.classList.add("future");
+                } else {
+                    cell.dataset.level = count === 0 ? 0 : Math.min(count, 4);
+                    cell.setAttribute('title', `${count} post${count !== 1 ? 's' : ''} on ${dateStr}`);
+                }
+            } else {
+                cell.classList.add("out-of-range");
+            }
+
+            if (d.getDay() === 0 && d >= startDate && d <= endDate) {
+                const currentMonth = d.getMonth();
+                if (currentMonth !== lastMonth) {
+                    const monthSpan = document.createElement("span");
+                    monthSpan.className = "month-label";
+                    monthSpan.textContent = d.toLocaleString('default', { month: 'short' });
+                    monthSpan.style.left = (Math.floor(i / 7) * weekStride) + 'px';
+                    monthsHeader.appendChild(monthSpan);
+                    lastMonth = currentMonth;
+                }
+            }
+            frag.appendChild(cell);
+        }
+        grid.appendChild(frag);
+
+        const summaryLabel = document.getElementById("heatmap-total-count");
+        if (summaryLabel) {
+            const rangeText = filterYear === 'current' ? 'past year' : filterYear;
+            summaryLabel.innerHTML = `<span class="heatmap-big-count">${rangeCount}</span> posts in ${rangeText}`;
+        }
+    }
+
+    renderHeatmap('current');
+
+    const select = document.getElementById("heatmap-year-select");
+    if (select) {
+        select.addEventListener("change", (e) => {
+            renderHeatmap(e.target.value);
+        });
+    }
+});
+</script>

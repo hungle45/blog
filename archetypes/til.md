@@ -1,6 +1,5 @@
 ---
 date: '{{ .Date }}'
-draft: true
+draft: false
 title: '{{ replace .File.ContentBaseName "_" " " | title }}'
-category: ''
 ---

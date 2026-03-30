@@ -2,7 +2,6 @@
 date: '2025-05-22T21:35:22+07:00'
 draft: false
 title: 'Zero Values in Go'
-category: 'Golang'
 ---
 
 Each type in Go has a zero value, which is the default value assigned to a variable of that type when it is declared but not explicity initialized.

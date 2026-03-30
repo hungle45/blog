@@ -1,12 +1,20 @@
-/* Home Page (home-info) Styles - Compact & Minimal */
+/* Home Page (home-info) Styles - Adaptive Spacing */
 .home-info {
-  padding: 36px 0; /* Removed horizontal padding for cleaner left-align */
+  padding: 36px 0;
   text-align: left;
   background: transparent;
-  border-bottom: 1px solid var(--border);
+  border-bottom: none;
   border-radius: 0;
   margin-bottom: 2rem;
-  min-height: 200px;
+  min-height: 180px;
+}
+
+/* 
+   Increase top padding when home-info is the primary content (no posts displayed),
+   creating a balanced, solo-header layout.
+*/
+.main:has(.home-info):not(:has(.post-entry)) .home-info {
+  padding-top: 100px;
 }
 
 .home-info .entry-header h2 {
@@ -20,7 +28,7 @@
   font-size: 1rem;
   line-height: 1.5;
   max-width: 700px;
-  margin: 0 0 1rem 0; /* Removed auto margin for left-align */
+  margin: 0 0 1rem 0;
   color: var(--secondary);
 }
 

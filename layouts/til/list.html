@@ -34,42 +34,53 @@
 </div>
 {{- end }}
 
-{{- $pages := .RegularPages }}
-{{- range $pages.GroupByParam "category" | sort }}
-  <div class="til-category">
-    <h2 class="til-category-header" id="{{ .Key }}">
-      <a class="til-category-link" href="#{{ .Key }}">{{- .Key | title -}}</a>
-      <sup class="til-count">&nbsp;{{ len .Pages }}</sup>
-    </h2>
-    <div class="til-posts">
-    {{- range .Pages }} {{- if eq .Kind "page" }}
-      <div class="til-entry">
-        <h3 class="til-entry-title entry-hint-parent">
-          {{- .Title | markdownify }} {{- if .Draft }}
-          <span class="entry-hint" title="Draft">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="15"
-              viewBox="0 -960 960 960"
-              fill="currentColor"
-            >
-              <path
-                d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"
-              />
-            </svg>
-          </span>
-          {{- end }}
-        </h3> 
-        <div class="archive-meta">{{- partial "post_meta.html" . -}}</div>
-        <a
-          class="entry-link"
-          aria-label="post link to {{ .Title | plainify }}"
-          href="{{ .Permalink }}"
-        ></a>
+{{- partial "til_heatmap.html" . }}
+
+<div class="til-timeline">
+  {{- $pages := .RegularPages }}
+  {{- range $pages.GroupByPublishDate "2006" }}
+  <div class="timeline-year">
+    <h2 class="timeline-year-label">{{ .Key }}</h2>
+    {{- range .Pages.GroupByDate "January" }}
+    <div class="timeline-month">
+      <h3 class="timeline-month-label">{{ .Key }}</h3>
+      <div class="timeline-posts">
+        {{- range .Pages }} {{- if eq .Kind "page" }}
+        <article class="timeline-entry">
+          <div class="timeline-dot"></div>
+          <header class="entry-header">
+            <h4 class="timeline-title">
+              {{- .Title | markdownify }} {{- if .Draft }}
+              <span class="entry-hint" title="Draft">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  height="15"
+                  viewBox="0 -960 960 960"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M160-410v-60h300v60H160Zm0-165v-60h470v60H160Zm0-165v-60h470v60H160Zm360 580v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q9 9 13 20t4 22q0 11-4.5 22.5T862.09-380L643-160H520Zm300-263-37-37 37 37ZM580-220h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19Z"
+                  />
+                </svg>
+              </span>
+              {{- end }}
+            </h4>
+          </header>
+          <footer class="timeline-meta">
+            {{- .Date.Format "January 2, 2006" }}
+          </footer>
+          <a
+            class="entry-link"
+            aria-label="post link to {{ .Title | plainify }}"
+            href="{{ .Permalink }}"
+          ></a>
+        </article>
+        {{- end }} {{- end }}
       </div>
-      {{- end }} {{- end }}
     </div>
+    {{- end }}
   </div>
-{{- end }}
+  {{- end }}
+</div>
 
 {{- end }}{{- /* end main */ -}}
