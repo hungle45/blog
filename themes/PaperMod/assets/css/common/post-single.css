@@ -165,9 +165,9 @@
     border-radius: var(--radius);
     direction: ltr;
     border: 1px solid rgb(250 240 137);
-    margin: 1rem -3rem 2.5rem;
+    margin: 1rem -2rem 2.5rem;
     padding: 0.75rem 1rem;
-    width: calc(100% + 6rem);
+    width: calc(100% + 4rem);
 }
 
 @media screen and (max-width: 1024px) {
